@@ -1,0 +1,16 @@
+.imageGalleryItem{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageGalleryItemImage{
+    width: 330px;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.imageGalleryItemImage:hover{
+    transform: scale(1.05);
+}

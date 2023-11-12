@@ -1,0 +1,38 @@
+.searchBar{
+    width: auto;
+    height: 80px;
+    background-color: rgb(20, 100, 175);
+    justify-content: center;
+    
+}
+
+.form{
+    text-align: center;
+    justify-content: center;
+    padding: 0px;
+    
+}
+
+
+.input{
+    margin-top: 20px;
+    width: 40%;
+    height: 30px;
+    justify-content: center;
+    border: none;
+    padding-left: 20px;
+
+}
+input:focus{
+    outline: none;
+}
+
+.btn{
+    width: 35px;
+    height: 32px;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
