@@ -1,39 +1,29 @@
-import { Component } from "react";
+import { useState } from "react";
 import css from './SearchBar.module.css'
 import { FaSearch } from 'react-icons/fa';
 
+const SearchBar = ({onSubmit}) => {
+   const [search, setSearch] = useState('');
 
-class SearchBar extends Component {
-    state = {
-        search: '',
-    } 
-
-    searchResult = event =>{
-        this.setState({search: event.currentTarget.value})
-
+   const searchResult = event => {
+        setSearch(event.currentTarget.value);
     }
 
-
-    handleSubmit = event =>{
+    const handleSubmit = event => {
         event.preventDefault();
-        const {search} = this.state;
-
-        this.props.onSubmit(search.trim());
-        this.setState({search: '',})
-
-
-
+        onSubmit(search.trim());
+        setSearch('');
 
         console.log('click');
     }    
 
 
-    render() { 
+
         return (
             <header className={css.searchBar}>
-                <form onSubmit={this.handleSubmit} action="submit" className={css.form}>
+                <form onSubmit={handleSubmit} action="submit" className={css.form}>
                     <button className={css.btn}><FaSearch size='12px'/></button>
-                    <input onChange={this.searchResult}  type="text" className={css.input}
+                    <input onChange={searchResult}  type="text" className={css.input}
                     placeholder="Search photos"/>
             
                 </form>
@@ -41,6 +31,5 @@ class SearchBar extends Component {
             </header>
         );
     }
-}
  
 export default SearchBar;
